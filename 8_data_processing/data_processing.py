@@ -43,5 +43,5 @@ ax.text(9.05, 2.05, discharge_time, fontsize = 12, color='#252525')
 
 
 #Сохраняем график в svg формате
-plt.savefig("test.svg")
+plt.savefig("graph.svg")
 
