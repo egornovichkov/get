@@ -6,7 +6,6 @@ from matplotlib.ticker import MultipleLocator, AutoMinorLocator
 #Считываем данные из файлов и преобразуем их для построения графика
 with open("settings.txt", "r") as settings:
     tmp = [float(i) for i in settings.read().split("\n")]
-    print(tmp)
 data_array = np.loadtxt("data.txt", dtype = int)
 data_array = tmp[1] * data_array
 time_array = np.arange(len(data_array))
