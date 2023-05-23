@@ -7,15 +7,15 @@ from matplotlib.ticker import MultipleLocator, AutoMinorLocator
 with open("settings.txt", "r") as settings:
     tmp = [float(i) for i in settings.read().split("\n")]
 data_array = np.loadtxt("data.txt", dtype = int)
-data_array = tmp[1] * data_array
+data_array = tmp[0] * data_array
 time_array = np.arange(len(data_array))
 time_array = [float(i) for i in time_array]
 time_array = np.array(time_array, dtype = float)
-time_array *= tmp[0]
+time_array *= tmp[1]
 
 #Считаем время разряда и заряда конденсатора
-a = tmp[0] * np.argmax(data_array)
-b = len(data_array)*tmp[0] - a
+a = tmp[1] * np.argmax(data_array)
+b = len(data_array)*tmp[1] - a
 a = f'{a:.2f}'
 b = f'{b:.2f}'
 charge_time = 'Время заряда: ' + a
@@ -25,7 +25,7 @@ discharge_time = 'Время разряда: ' + b
 #Настраиваем внешний вид графика
 fig, ax = plt.subplots(figsize = (16, 10), dpi = 400)
 ax.plot(time_array, data_array, color='#DC143C', linestyle='-', linewidth=1, markevery = 10, marker='s', markersize=3, label = 'V(t)')
-ax.set_xlim(0, 13)
+ax.set_xlim(0, 11)
 ax.set_ylim(0, 3.5)
 ax.set_xlabel('Время, с', fontsize = 16)
 ax.set_ylabel('Напряжение, В', fontsize = 16)
