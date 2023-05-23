@@ -26,7 +26,7 @@ discharge_time = 'Время разряда: ' + b
 fig, ax = plt.subplots(figsize = (16, 10), dpi = 400)
 ax.plot(time_array, data_array, color='#DC143C', linestyle='-', linewidth=1, markevery = 10, marker='s', markersize=3, label = 'V(t)')
 ax.set_xlim(0, 13)
-ax.set_ylim(0, 3.3)
+ax.set_ylim(0, 3.5)
 ax.set_xlabel('Время, с', fontsize = 16)
 ax.set_ylabel('Напряжение, В', fontsize = 16)
 ax.set_title('Процесс заряда и разряда конденсатора в RC-цепи', fontsize = 20, loc = 'center', pad = 15.0)
